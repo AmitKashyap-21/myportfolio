@@ -4,7 +4,7 @@ export const resumeData = {
     title: "Artificial Intelligence & Data Science Engineer",
     tagline: "Building scalable intelligent systems using LLMs, RAG, Recommendation Workflows & Data-driven Solutions.",
     phone: "+91 8303574739",
-    email: "amitkashyap.dev@gmail.com",
+    email: "amit.kashyap.swe@gmail.com",
     linkedin: "https://linkedin.com/in/amitkashyap21",
     github: "https://github.com/AmitKashyap-21",
     location: "Lucknow, UP / Remote",
