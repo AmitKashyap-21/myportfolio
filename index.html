@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Apple Minimal Style</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            apple: {
+              bg: '#FBFBFD',
+              surface: '#FFFFFF',
+              alt: '#F5F5F7',
+              border: '#E5E7EB',
+              text: '#1D1D1F',
+              secondary: '#6E6E73',
+              muted: '#8E8E93',
+              blue: '#0071E3',
+              blueHover: '#0077ED',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Helvetica Neue', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Apple Glassmorphic segmented control effect */
+    .segmented-control {
+      background-color: rgba(245, 245, 247, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    
+    /* Subtle Apple-style lift animation */
+    .apple-card-hover {
+      transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1), border-color 250ms ease;
+    }
+    .apple-card-hover:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      border-color: #D1D5DB;
+    }
+
+    /* Tab active state */
+    .tab-active {
+      background-color: #FFFFFF !important;
+      color: #1D1D1F !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-apple-bg text-apple-text font-sans antialiased selection:bg-apple-blue selection:text-white">
+
+  <!-- ========================================================= -->
+  <!-- RECRUITER-FOCUSED HIGH-IMPACT HERO SECTION                 -->
+  <!-- ========================================================= -->
+  <header class="max-w-6xl mx-auto px-6 pt-24 pb-16 text-center">
+    <!-- Status Badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-apple-alt border border-apple-border text-xs font-medium text-apple-secondary mb-8">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      Available for Staff / Senior Product & Frontend Roles
+    </div>
+
+    <!-- Main Headline -->
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-apple-text max-w-4xl mx-auto leading-tight mb-6">
+      Building human-centered AI experiences with precision & scale.
+    </h1>
+
+    <!-- Subtitle / Value Proposition for Recruiters -->
+    <p class="text-lg md:text-xl text-apple-secondary max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+      Principal Designer & Staff Engineer specializing in turning complex AI capabilities into intuitive, elegant, and production-grade software interfaces.
+    </p>
+
+    <!-- CTAs & Quick Info -->
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
+      <a href="#showcase" class="px-6 py-3.5 bg-apple-blue hover:bg-apple-blueHover text-white font-medium text-sm rounded-full transition-all shadow-sm hover:shadow">
+        Explore AI Showcase
+      </a>
+      <a href="mailto:your.email@domain.com" class="px-6 py-3.5 bg-white hover:bg-apple-alt border border-apple-border text-apple-text font-medium text-sm rounded-full transition-all shadow-sm">
+        Contact Direct
+      </a>
+    </div>
+
+    <!-- Quick Metrics / Highlights Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-apple-border max-w-4xl mx-auto text-left">
+      <div>
+        <div class="text-xs uppercase tracking-wider text-apple-muted font-semibold mb-1">Focus</div>
+        <div class="text-sm font-medium text-apple-text">AI Systems & UI Architecture</div>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-wider text-apple-muted font-semibold mb-1">Experience</div>
+        <div class="text-sm font-medium text-apple-text">8+ Years in Lead Roles</div>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-wider text-apple-muted font-semibold mb-1">Primary Stack</div>
+        <div class="text-sm font-medium text-apple-text">React, Next.js, Python, Vector DBs</div>
+      </div>
+      <div>
+        <div class="text-xs uppercase tracking-wider text-apple-muted font-semibold mb-1">Location</div>
+        <div class="text-sm font-medium text-apple-text">San Francisco, CA / Remote</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- INTERACTIVE AI PRODUCT SHOWCASE SECTION                    -->
+  <!-- ========================================================= -->
+  <section id="showcase" class="py-20 bg-apple-alt border-t border-b border-apple-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-apple-text mb-4">
+          Interactive AI Architecture
+        </h2>
+        <p class="text-base md:text-lg text-apple-secondary font-normal">
+          Explore real-time data pipelines and production systems engineered for low latency and high accuracy.
+        </p>
+      </div>
+
+      <!-- MAIN CONTAINER (Window Wrapper) -->
+      <div class="bg-white rounded-[24px] border border-apple-border shadow-[0_8px_30px_rgba(0,0,0,0.05)] overflow-hidden">
+        
+        <!-- WINDOW HEADER & APPLE SEGMENTED CONTROL TABS -->
+        <div class="px-6 py-4 bg-white border-b border-apple-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <!-- macOS Window Dots & Title -->
+          <div class="flex items-center gap-3">
+            <div class="flex items-center gap-1.5">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/30 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/30 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/30 inline-block"></span>
+            </div>
+            <div class="h-4 w-[1px] bg-apple-border mx-1"></div>
+            <span id="window-title" class="text-sm md:text-base font-semibold text-apple-text tracking-tight">
+              Enterprise RAG Intelligence Pipeline
+            </span>
+          </div>
+
+          <!-- Segmented Control Tabs -->
+          <div class="segmented-control p-1 rounded-xl flex items-center gap-1 border border-apple-border/60">
+            <button onclick="switchProject('rag')" id="tab-rag" class="project-tab tab-active px-4 py-1.5 text-xs font-medium rounded-lg text-apple-secondary hover:text-apple-text transition-all">
+              RAG Engine
+            </button>
+            <button onclick="switchProject('vision')" id="tab-vision" class="project-tab px-4 py-1.5 text-xs font-medium rounded-lg text-apple-secondary hover:text-apple-text transition-all">
+              Vision AI
+            </button>
+            <button onclick="switchProject('agent')" id="tab-agent" class="project-tab px-4 py-1.5 text-xs font-medium rounded-lg text-apple-secondary hover:text-apple-text transition-all">
+              Autonomous Agent
+            </button>
+          </div>
+        </div>
+
+        <!-- MAIN INTERACTIVE DISPLAY AREA -->
+        <div class="p-8 md:p-12 space-y-12 bg-apple-bg/40">
+          
+          <!-- PIPELINE VISUALIZATION HEADER -->
+          <div>
+            <div class="text-xs uppercase tracking-wider font-semibold text-apple-muted mb-1">Live Execution Pipeline</div>
+            <h3 class="text-xs text-apple-secondary">Click any step to inspect system mechanics</h3>
+          </div>
+
+          <!-- PIPELINE FLOATING CARDS -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+            
+            <!-- Step 1 -->
+            <div id="step-1" class="apple-card hover:cursor-pointer apple-card-hover bg-white p-6 rounded-[18px] border border-apple-border shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-apple-alt flex items-center justify-center text-apple-blue mb-4">
+                  <i data-lucide="file-text" class="w-5 h-5"></i>
+                </div>
+                <h4 id="step1-title" class="text-base font-semibold text-apple-text mb-1">Document Ingestion</h4>
+                <p id="step1-desc" class="text-xs text-apple-secondary leading-relaxed">PDF, Markdown, Unstructured Web Data parsing</p>
+              </div>
+              <div class="mt-6 pt-3 border-t border-apple-border/60 flex justify-between items-center text-[11px] text-apple-muted font-medium">
+                <span>STAGE 01</span>
+                <span class="text-apple-blue font-semibold">Ready</span>
+              </div>
+            </div>
+
+            <!-- Connector Arrow 1 -->
+            <div class="hidden md:flex absolute top-1/2 left-[23.5%] -translate-y-1/2 z-10 text-apple-blue">
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step-2" class="apple-card hover:cursor-pointer apple-card-hover bg-white p-6 rounded-[18px] border border-apple-border shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-apple-alt flex items-center justify-center text-apple-blue mb-4">
+                  <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <h4 id="step2-title" class="text-base font-semibold text-apple-text mb-1">Vector Embedding</h4>
+                <p id="step2-desc" class="text-xs text-apple-secondary leading-relaxed">Text-embedding-3-large tokenization</p>
+              </div>
+              <div class="mt-6 pt-3 border-t border-apple-border/60 flex justify-between items-center text-[11px] text-apple-muted font-medium">
+                <span>STAGE 02</span>
+                <span class="text-apple-blue font-semibold">Active</span>
+              </div>
+            </div>
+
+            <!-- Connector Arrow 2 -->
+            <div class="hidden md:flex absolute top-1/2 left-[48.5%] -translate-y-1/2 z-10 text-apple-blue">
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step-3" class="apple-card hover:cursor-pointer apple-card-hover bg-white p-6 rounded-[18px] border border-apple-border shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-apple-alt flex items-center justify-center text-apple-blue mb-4">
+                  <i data-lucide="database" class="w-5 h-5"></i>
+                </div>
+                <h4 id="step3-title" class="text-base font-semibold text-apple-text mb-1">Hybrid Retrieval</h4>
+                <p id="step3-desc" class="text-xs text-apple-secondary leading-relaxed">Qdrant vector similarity & BM25 keyword search</p>
+              </div>
+              <div class="mt-6 pt-3 border-t border-apple-border/60 flex justify-between items-center text-[11px] text-apple-muted font-medium">
+                <span>STAGE 03</span>
+                <span class="text-apple-blue font-semibold">Ready</span>
+              </div>
+            </div>
+
+            <!-- Connector Arrow 3 -->
+            <div class="hidden md:flex absolute top-1/2 left-[73.5%] -translate-y-1/2 z-10 text-apple-blue">
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="step-4" class="apple-card hover:cursor-pointer apple-card-hover bg-white p-6 rounded-[18px] border border-apple-border shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-apple-alt flex items-center justify-center text-apple-blue mb-4">
+                  <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <h4 id="step4-title" class="text-base font-semibold text-apple-text mb-1">LLM Synthesis</h4>
+                <p id="step4-desc" class="text-xs text-apple-secondary leading-relaxed">Grounded generation with source citations</p>
+              </div>
+              <div class="mt-6 pt-3 border-t border-apple-border/60 flex justify-between items-center text-[11px] text-apple-muted font-medium">
+                <span>STAGE 04</span>
+                <span class="text-apple-blue font-semibold">Output</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- PROJECT OVERVIEW PANEL -->
+          <div id="project-details" class="bg-white rounded-[20px] border border-apple-border p-8 md:p-10 shadow-sm transition-opacity duration-300">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              <!-- Left Column: Summary & Problem Solved -->
+              <div class="lg:col-span-2 space-y-6">
+                <div>
+                  <h3 id="project-name" class="text-2xl font-semibold text-apple-text tracking-tight mb-2">
+                    Enterprise RAG Intelligence Pipeline
+                  </h3>
+                  <p id="project-summary" class="text-apple-secondary text-sm md:text-base leading-relaxed">
+                    An end-to-end Retrieval-Augmented Generation system designed to query enterprise document bases with sub-second latency and zero hallucination tolerances.
+                  </p>
+                </div>
+
+                <div class="pt-4 border-t border-apple-border">
+                  <h4 class="text-xs uppercase tracking-wider font-semibold text-apple-muted mb-2">Problem Solved</h4>
+                  <p id="project-problem" class="text-sm text-apple-secondary leading-relaxed">
+                    Eliminated operational delays for knowledge workers searching across millions of internal PDFs by delivering conversational context with exact source attribution.
+                  </p>
+                </div>
+
+                <!-- Key Features -->
+                <div>
+                  <h4 class="text-xs uppercase tracking-wider font-semibold text-apple-muted mb-3">Key Capabilities</h4>
+                  <ul id="project-features" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-apple-text">
+                    <li class="flex items-center gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-apple-blue"></i> Sub-200ms Hybrid Search
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-apple-blue"></i> Automated Context Reranking
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-apple-blue"></i> Dynamic Metadata Filtering
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-apple-blue"></i> Strict Access Control Sync
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Right Column: Tech Stack & Actions -->
+              <div class="flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-apple-border pt-6 lg:pt-0 lg:pl-8 space-y-8">
+                
+                <!-- Tech Stack Pills -->
+                <div>
+                  <h4 class="text-xs uppercase tracking-wider font-semibold text-apple-muted mb-3">Technology Stack</h4>
+                  <div id="project-stack" class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-apple-alt border border-apple-border rounded-full text-xs font-medium text-[#374151] hover:border-apple-blue transition-colors cursor-default">
+                      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M14.25 2h-4.5L7.5 4.75v3.5h3.75v1.25H4.75L2 12.25v4.5L4.75 19.5h3.75v-3.75h1.25V19.5h3.75L19.5 16.75v-4.5L16.75 9.5H13V8.25h3.75L19.5 5.5v-3.5L16.75 2h-2.5zM7.5 5.75a1 1 0 110-2 1 1 0 010 2zm9 12.5a1 1 0 110-2 1 1 0 010 2z"/></svg>
+                      Python
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-apple-alt border border-apple-border rounded-full text-xs font-medium text-[#374151] hover:border-apple-blue transition-colors cursor-default">
+                      <svg class="w-3.5 h-3.5 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                      FastAPI
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-apple-alt border border-apple-border rounded-full text-xs font-medium text-[#374151] hover:border-apple-blue transition-colors cursor-default">
+                      <svg class="w-3.5 h-3.5 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+                      Qdrant
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-apple-alt border border-apple-border rounded-full text-xs font-medium text-[#374151] hover:border-apple-blue transition-colors cursor-default">
+                      <svg class="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                      OpenAI API
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-apple-alt border border-apple-border rounded-full text-xs font-medium text-[#374151] hover:border-apple-blue transition-colors cursor-default">
+                      <svg class="w-3.5 h-3.5 text-sky-500" viewBox="0 0 24 24" fill="currentColor"><path d="M22 13h-4v-4h4v4zm-6 0h-4v-4h4v4zm0-6h-4V3h4v4zm-6 6H6v-4h4v4zm0-6H6V3h4v4zm0 12H2v-4h8v4z"/></svg>
+                      Docker
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-apple-alt border border-apple-border rounded-full text-xs font-medium text-[#374151] hover:border-apple-blue transition-colors cursor-default">
+                      <svg class="w-3.5 h-3.5 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/></svg>
+                      React
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row lg:flex-col gap-3 pt-4">
+                  <a id="btn-demo" href="#" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-apple-blue hover:bg-apple-blueHover text-white font-medium text-sm rounded-full transition-all shadow-sm">
+                    <span>Live Interactive Demo</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+                  <a id="btn-github" href="#" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white hover:bg-apple-alt border border-[#D1D5DB] text-apple-text font-medium text-sm rounded-full transition-all shadow-sm">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>View Repository</span>
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT LOGIC                                           -->
+  <!-- ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+
+    const projectData = {
+      rag: {
+        title: "Enterprise RAG Intelligence Pipeline",
+        summary: "An end-to-end Retrieval-Augmented Generation system designed to query enterprise document bases with sub-second latency and zero hallucination tolerances.",
+        problem: "Eliminated operational delays for knowledge workers searching across millions of internal PDFs by delivering conversational context with exact source attribution.",
+        features: [
+          "Sub-200ms Hybrid Search",
+          "Automated Context Reranking",
+          "Dynamic Metadata Filtering",
+          "Strict Access Control Sync"
+        ],
+        stack: ["Python", "FastAPI", "Qdrant", "OpenAI API", "Docker", "React"],
+        steps: [
+          { title: "Document Ingestion", desc: "PDF, Markdown, Unstructured Web Data parsing", icon: "file-text" },
+          { title: "Vector Embedding", desc: "Text-embedding-3-large tokenization", icon: "cpu" },
+          { title: "Hybrid Retrieval", desc: "Qdrant vector similarity & BM25 keyword search", icon: "database" },
+          { title: "LLM Synthesis", desc: "Grounded generation with source citations", icon: "sparkles" }
+        ],
+        demo: "#",
+        github: "#"
+      },
+      vision: {
+        title: "Real-time Autonomous Inspection AI",
+        summary: "Computer vision platform for real-time defect detection in high-speed manufacturing lines using edge inference.",
+        problem: "Reduced manual inspection overhead by 85% while flagging sub-millimeter structural flaws at 60 frames per second.",
+        features: [
+          "Edge Model Quantization",
+          "Sub-15ms Motion Inference",
+          "Automated Anomaly Tagging",
+          "Live Stream Telemetry"
+        ],
+        stack: ["PyTorch", "YOLOv8", "TensorRT", "C++", "OpenCV", "WebSockets"],
+        steps: [
+          { title: "Frame Capture", desc: "4K Industrial Video Input Stream", icon: "camera" },
+          { title: "Edge Processing", desc: "TensorRT Model Acceleration", icon: "zap" },
+          { title: "Defect Detection", desc: "Bounding Box & Confidence Scoring", icon: "scan" },
+          { title: "Alert Dispatch", desc: "Sub-millisecond WebSocket Broadcast", icon: "bell" }
+        ],
+        demo: "#",
+        github: "#"
+      },
+      agent: {
+        title: "Autonomous Multi-Agent Workflow Engine",
+        summary: "Orchestration system that enables autonomous LLM agents to plan, execute, and evaluate multi-step software tasks.",
+        problem: "Automates repetitive engineering tasks, such as dependency upgrades and regression test creation, without human intervention.",
+        features: [
+          "Self-Correction Feedback Loop",
+          "Isolated Sandbox Execution",
+          "Deterministic Tool Calling",
+          "Audit Log & Replay"
+        ],
+        stack: ["TypeScript", "LangChain", "Node.js", "Redis", "Docker", "Next.js"],
+        steps: [
+          { title: "Goal Decomp", desc: "Break user prompt into DAG tasks", icon: "git-fork" },
+          { title: "Tool Execution", desc: "Safe API & Terminal execution sandbox", icon: "terminal" },
+          { title: "State Evaluation", desc: "Verify output against test suites", icon: "check-square" },
+          { title: "Result Commit", desc: "Generate Pull Request & Summary", icon: "git-pull-request" }
+        ],
+        demo: "#",
+        github: "#"
+      }
+    };
+
+    function switchProject(key) {
+      const data = projectData[key];
+      if (!data) return;
+
+      document.querySelectorAll('.project-tab').forEach(tab => tab.classList.remove('tab-active'));
+      const activeTab = document.getElementById(`tab-${key}`);
+      if (activeTab) activeTab.classList.add('tab-active');
+
+      const detailsPanel = document.getElementById('project-details');
+      if (detailsPanel) detailsPanel.style.opacity = '0';
+
+      setTimeout(() => {
+        const windowTitle = document.getElementById('window-title');
+        const projectName = document.getElementById('project-name');
+        const projectSummary = document.getElementById('project-summary');
+        const projectProblem = document.getElementById('project-problem');
+
+        if (windowTitle) windowTitle.textContent = data.title;
+        if (projectName) projectName.textContent = data.title;
+        if (projectSummary) projectSummary.textContent = data.summary;
+        if (projectProblem) projectProblem.textContent = data.problem;
+
+        const featuresEl = document.getElementById('project-features');
+        if (featuresEl) {
+          featuresEl.innerHTML = data.features.map(f => `
+            <li class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-apple-blue"></i> ${f}
+            </li>
+          `).join('');
+        }
+
+        const stackEl = document.getElementById('project-stack');
+        if (stackEl) {
+          // Helper icons for stack rendering across projects
+          const stackIcons = {
+            "Python": `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M14.25 2h-4.5L7.5 4.75v3.5h3.75v1.25H4.75L2 12.25v4.5L4.75 19.5h3.75v-3.75h1.25V19.5h3.75L19.5 16.75v-4.5L16.75 9.5H13V8.25h3.75L19.5 5.5v-3.5L16.75 2h-2.5z"/></svg>`,
+            "FastAPI": `<svg class="w-3.5 h-3.5 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+            "Qdrant": `<svg class="w-3.5 h-3.5 text-indigo-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>`,
+            "OpenAI API": `<svg class="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`,
+            "Docker": `<svg class="w-3.5 h-3.5 text-sky-500" viewBox="0 0 24 24" fill="currentColor"><path d="M22 13h-4v-4h4v4zm-6 0h-4v-4h4v4zm0-6h-4V3h4v4zm-6 6H6v-4h4v4zm0-6H6V3h4v4zm0 12H2v-4h8v4z"/></svg>`,
+            "React": `<svg class="w-3.5 h-3.5 text-cyan-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/></svg>`,
+            "PyTorch": `<svg class="w-3.5 h-3.5 text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+            "TypeScript": `<svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3V3zm10.5 11.5h-2v2h-2v-6h4v4z"/></svg>`
+          };
+
+          stackEl.innerHTML = data.stack.map(s => `
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-apple-alt border border-apple-border rounded-full text-xs font-medium text-[#374151] hover:border-apple-blue transition-colors cursor-default">
+              ${stackIcons[s] || `<svg class="w-3.5 h-3.5 text-apple-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>`}
+              ${s}
+            </span>
+          `).join('');
+        }
+
+        data.steps.forEach((s, idx) => {
+          const num = idx + 1;
+          const stepTitle = document.getElementById(`step${num}-title`);
+          const stepDesc = document.getElementById(`step${num}-desc`);
+          if (stepTitle) stepTitle.textContent = s.title;
+          if (stepDesc) stepDesc.textContent = s.desc;
+        });
+
+        const btnDemo = document.getElementById('btn-demo');
+        const btnGithub = document.getElementById('btn-github');
+        if (btnDemo) btnDemo.href = data.demo;
+        if (btnGithub) btnGithub.href = data.github;
+
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+        if (detailsPanel) detailsPanel.style.opacity = '1';
+      }, 150);
+    }
+  </script>
+</body>
+</html>
